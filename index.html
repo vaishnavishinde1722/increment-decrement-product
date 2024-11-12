@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>increment-decrement-product</title>
+    <style>
+        .card{
+            height: 400px;
+            width: 300px;
+            background-color: #f8ecf2;
+        }
+        .img{
+            margin: 20px auto;
+            display: block;
+            padding: 20px;
+            height: 200px;
+            width: 200px;
+        } 
+        .btn{
+            height: 30px;
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+            background-color:#e698cc;
+            cursor: pointer;
+            border: 3px solid #d65cad;
+            border-radius: 8px;
+        }
+        .icon-container{
+            margin: 20px auto;
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            
+        }
+        .icon{
+            height: 40px;
+            width: 40px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="img" src="./flower.jpg">
+        <h4 style="text-align: center;">Ivory Wedding Bouquet</h4>
+        <div class="icon-container">
+        <img class="icon" src="./minus.png" onclick="dec()">
+        <span id="quantity">1</span>
+        <img class="icon" src="./plus.png" onclick="inc()">
+        </div>
+        <button class="btn">Buy Now</button>
+    </div>
+    <script>
+        const quantityele=document.getElementById('quantity');
+        function inc()
+        {
+           let quantity=parseInt(quantityele.innerText)
+           quantityele.innerText=++quantity;
+
+        }
+        function dec()
+        {
+            let quantity=parseInt(quantityele.innerText)
+            if(quantity>1)
+            {
+            quantityele.innerText=--quantity;
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
